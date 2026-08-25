@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "shapestat"
+version = "0.1.0"
+description = "Summarize CSV/TSV file shape, column types, missing counts, and duplicate rows."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "Henry Samuel", email = "262435683+Henry-Samuel@users.noreply.github.com"}
+]
+keywords = ["csv", "tsv", "data-quality", "cli", "shape", "profiling"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+[project.scripts]
+shapestat = "shapestat:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["shapestat*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
