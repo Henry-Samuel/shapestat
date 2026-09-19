@@ -62,3 +62,12 @@ shapestat/
 ## License
 
 MIT
+
+## Development
+
+CI runs on push to `main` and on pull requests. To run tests locally:
+
+```bash
+pip install -e ".[dev]"
+pytest tests/
+```
